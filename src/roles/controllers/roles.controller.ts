@@ -3,10 +3,10 @@ https://docs.nestjs.com/controllers#controllers
 */
 
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post } from '@nestjs/common';
-import { RolesService } from './roles.service';
+import { RolesService } from '../services/roles.service';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { RolesDto } from './dto/roles.dto';
-import { Roles } from './entity/roles.entity';
+import { RolesDto } from '../dto/roles.dto';
+import { Roles } from '../entity/roles.entity';
 
 @ApiTags('roles')
 @Controller('roles')
@@ -21,8 +21,8 @@ export class RolesController {
 
   @Post()
   @ApiOperation({ summary: 'crea un rol' })
-  createUser(@Body() user: RolesDto) {
-    return this.rolesService.createUser(user);
+  createRole(@Body() role: RolesDto) {
+    return this.rolesService.createUser(role);
   }
 
   @Patch(':id')

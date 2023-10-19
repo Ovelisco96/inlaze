@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Roles } from './entity/roles.entity';
+import { Roles } from '../entity/roles.entity';
 import { Repository } from 'typeorm';
-import { RolesDto, UpdateRolesDto } from './dto/roles.dto';
+import { RolesDto, UpdateRolesDto } from '../dto/roles.dto';
 
 @Injectable()
 export class RolesService {
