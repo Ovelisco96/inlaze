@@ -1,6 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Users } from 'src/users/entity/user.entity';
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 @Entity()
 export class Roles {
   @PrimaryGeneratedColumn()
@@ -18,6 +17,4 @@ export class Roles {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @ManyToOne(() => Users, (user) => user.role)
-  user: Users
 }

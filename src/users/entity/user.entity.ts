@@ -1,6 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Roles } from 'src/roles/entity/roles.entity';
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany, CreateDateColumn, UpdateDateColumn, OneToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 @Entity()
 export class Users {
   @PrimaryGeneratedColumn()
@@ -18,8 +17,8 @@ export class Users {
   @Column({ type: "bigint" })
   phone: number;
 
-  @OneToMany(() => Roles, (roles) => roles.user)
-  role: Roles;
+  @Column()
+  role: string;
 
   @Column()
   is_deleted: boolean;

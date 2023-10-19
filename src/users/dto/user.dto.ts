@@ -18,8 +18,8 @@ export class UserDto {
   @IsNumber()
   readonly phone: number;
 
-  @IsNumber()
-  role: number;
+  @IsString()
+  role: string;
 
   @IsBoolean()
   readonly is_deleted: boolean;
